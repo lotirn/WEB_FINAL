@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Jammin' — Lotti</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='css/main.css'>
+  <script src='js/main.js' defer></script>
+</head>
+
+
+
+<!-- BODY -->
+
+<body>
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <header class="header">
+    <nav class="nav">
+
+      <!-- MENÚ IZQUIERDO -->
+      <div class="nav__left">
+        <a href="proyectos.html" class="nav__link">Proyectos</a>
+        <a href="about.html" class="nav__link">Sobre mí</a>
+      </div>
+
+      <!-- LOGO CENTRADO -->
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <!-- MENÚ DERECHO -->
+      <div class="nav__right">
+        <a href="contacto.html" class="nav__button nav__button--contacto">Contacto</a>
+        <button class="nav__hamburger" onclick="toggleMenu()">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+      </div>
+
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="proyectos.html">Proyectos</a>
+      <a href="about.html">Sobre mí</a>
+      <a href="contacto.html">Contacto</a>
+
+    </div>
+  </header>
+
+
+  <main class="project-single">
+    <section class="project-hero">
+      <h1 class="project-title">JAMMIN</h1>
+      <p class="project-category">Branding, Packaging & Diseño Web</p>
+    </section>
+
+    <section class="project-info-grid">
+      <div class="info-item">
+        <h2>Sector</h2>
+        <p>Bebidas alcohólicas</p>
+      </div>
+      <div class="info-item">
+        <h2>Año</h2>
+        <p>2025</p>
+      </div>
+      <div class="info-item">
+        <h2>Servicios</h2>
+        <p>Branding, Packaging, UI/UX & Web Design</p>
+      </div>
+      <div class="info-text">
+        <p>Diseño de identidad visual y packaging para una gama ficticia de cócteles preparados en lata. El encargo
+          planteaba desarrollar una imagen fresca y reconocible capaz de transmitir el carácter refrescante y tropical
+          del producto.
+          <br>
+          La propuesta se articula a través de un sistema gráfico basado en ilustraciones de plantas tropicales, que
+          aportan color, personalidad y diferenciación en el lineal. El resultado es una identidad vibrante y
+          contemporánea que refuerza el carácter desenfadado del producto y su orientación a un público joven.
+        </p>
+
+        <div class="project-actions">
+          <button class="btn-play-video" title="Ver Vídeo del la Web" onclick="openVideo()">
+            <span class="icon">▶</span> Ver Vídeo del la Web
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="project-gallery">
+      <picture>
+        <source srcset="images/J0.webp.webp" type="image/webp">
+        <source srcset="images/J0.jpg" type="image/jpeg">
+        <img src="images/J0.jpg" alt="Imagen 1: Contexto General" class="full-width" loading="lazy">
+      </picture>
+
+      <div class="gallery-two-columns">
+        <picture>
+          <source srcset="images/J1.webp.webp" type="image/webp">
+          <source srcset="images/J1.jpg" type="image/jpeg">
+          <img src="images/J1.jpg" alt="Imagen 2: Detalle simétrico A" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/J2.webp.webp" type="image/webp">
+          <source srcset="images/J2.jpg" type="image/jpeg">
+          <img src="images/J2.jpg" alt="Imagen 3: Detalle simétrico B" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="gallery-three-columns">
+        <picture>
+          <source srcset="images/J3.webp.webp" type="image/webp">
+          <source srcset="images/J3.jpg" type="image/jpeg">
+          <img src="images/J3.jpg" alt="Imagen 4: Miniatura A" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/J4.webp.webp" type="image/webp">
+          <source srcset="images/J4.jpg" type="image/jpeg">
+          <img src="images/J4.jpg" alt="Imagen 5: Miniatura B" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/J5.webp.webp" type="image/webp">
+          <source srcset="images/J5.jpg" type="image/jpeg">
+          <img src="images/J5.jpg" alt="Imagen 6: Miniatura C" loading="lazy">
+        </picture>
+      </div>
+    </div>
+
+    <!-- GALERÍA DE LATAS -->
+    <div class="project-extra-gallery">
+      <div class="gallery-extra-grid">
+        <picture>
+          <source srcset="images/blue.webp.webp" type="image/webp">
+          <source srcset="images/blue_11zon.png" type="image/png">
+          <img src="images/blue_11zon.png" alt="Imagen extra 1" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/cai.webp.webp" type="image/webp">
+          <source srcset="images/cai_11zon.png" type="image/png">
+          <img src="images/cai_11zon.png" alt="Imagen extra 2" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/cosmo.webp.webp" type="image/webp">
+          <source srcset="images/cosmo_11zon.png" type="image/png">
+          <img src="images/cosmo_11zon.png" alt="Imagen extra 3" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/dai.webp.webp" type="image/webp">
+          <source srcset="images/dai_11zon.png" type="image/png">
+          <img src="images/dai_11zon.png" alt="Imagen extra 4" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/mai.webp.webp" type="image/webp">
+          <source srcset="images/mai_11zon.png" type="image/png">
+          <img src="images/mai_11zon.png" alt="Imagen extra 5" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/marga.webp.webp" type="image/webp">
+          <source srcset="images/marga_11zon.png" type="image/png">
+          <img src="images/marga_11zon.png" alt="Imagen extra 6" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/moj.webp.webp" type="image/webp">
+          <source srcset="images/moj_11zon.png" type="image/png">
+          <img src="images/moj_11zon.png" alt="Imagen extra 7" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/negro.webp.webp" type="image/webp">
+          <source srcset="images/negro_11zon.png" type="image/png">
+          <img src="images/negro_11zon.png" alt="Imagen extra 8" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/sex.webp.webp" type="image/webp">
+          <source srcset="images/sex_11zon.png" type="image/png">
+          <img src="images/sex_11zon.png" alt="Imagen extra 9" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/piña.webp.webp" type="image/webp">
+          <source srcset="images/piña_11zon.png" type="image/png">
+          <img src="images/piña_11zon.png" alt="Imagen extra 10" loading="lazy">
+        </picture>
+      </div>
+    </div>
+
+    <nav class="project-pagination">
+      <a href="AltheaMarina.html" title="Ver proyecto anterior" class="prev-project">← Anterior</a>
+      <a href="proyectos.html" title="Ver todos los proyectos" class="back-grid">Ver todos</a>
+      <a href="Purebeat.html" title="Ver siguiente proyecto" class="next-project">Siguiente →</a>
+    </nav>
+  </main>
+
+  <div id="videoModal" class="video-modal" onclick="closeVideo()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <video id="projectVideo" controls poster="images/poster-video-jammin.jpg" preload="none">
+        <source src="images/video_webm.mp4" type="video/webm">
+        <source src="images/video-jammin.mp4" type="video/mp4">
+        Tu navegador no soporta videos.
+      </video>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="nav__logo">
+        <a href="index.html" title="Ir a la página de Inicio">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="index.html" title="Ir a la página de Inicio" class="footer__link">Inicio</a>
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="footer__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="footer__link">Sobre mí</a>
+        <a href="contacto.html" title="Ir a la página de Contacto" class="footer__link">Contacto</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://wa.me/620171067?text=Hola%20quiero%20información" title="Abrir WhatsApp" target="_blank" rel="noreferrer" class="footer__social-link" aria-label="WhatsApp">
+          <span class="social-icon">WhatsApp</span> </a>
+        <a href="https://www.linkedin.com/in/carlota-ruiz-nu%C3%B1ez-675740191/" title="Abrir LinkedIn" target="_blank" rel="noreferrer" class="footer__social-link" aria-label="LinkedIn">
+          <span class="social-icon">LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="footer__copy">
+        <p>&copy; 2026 Lotti — Diseñadora Gráfica.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

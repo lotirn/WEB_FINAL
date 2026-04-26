@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>lotti</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='css/main.css'>
+  <script src='js/main.js' defer></script>
+</head>
+
+<!-- BODY -->
+
+<body>
+
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <header class="header">
+    <nav class="nav">
+
+      <!-- MENÚ IZQUIERDO -->
+      <div class="nav__left">
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="nav__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="nav__link">Sobre mí</a>
+      </div>
+
+      <!-- LOGO CENTRADO -->
+      <div class="nav__logo">
+        <a href="index.html" title="Ir a la página de Inicio">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <!-- MENÚ DERECHO -->
+      <div class="nav__right">
+        <a href="contacto.html" title="Ir a la página de Contacto"
+          class="nav__button nav__button--contacto">Contacto</a>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="nav__hamburger" title="Abrir menú" onclick="toggleMenu()">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+      </div>
+
+    </nav>
+
+    <!-- DENTRO DE LA HAMBURGUESA -->
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="proyectos.html" title="Ir a la página de Proyectos">Proyectos</a>
+      <a href="about.html" title="Ir a la página Sobre mí">Sobre mí</a>
+      <a href="contacto.html" title="Ir a la página de Contacto">Contacto</a>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN HERO -->
+    <section class="hero hero--minimal">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          DISEÑO<br>
+          VISUAL<br>
+          <span class="hero__ampersand">&</span> ESTRATEGIA
+        </h1>
+        <p class="hero__subtitle">
+          Lotti — Creatividad en movimiento.
+        </p>
+      </div>
+
+      <div class="hero__doodle"> <!-- GARABATO BAJO EL TITULO -->
+        <svg class="hero__doodle-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path d="M10,90 Q30,10 50,50 T90,10" stroke="var(--accent-color)" stroke-width="3" fill="none"
+            stroke-linecap="round" />
+        </svg>
+      </div>
+
+    </section>
+
+    <!-- SECCION DE SERVICIOS -->
+    <section class="services services--dark">
+      <!-- ACORDEÓN -->
+      <div class="services__item">
+        <button class="services__header" title="Branding" onclick="toggleService(this)">
+          <span class="services__title">Branding</span>
+          <span class="services__arrow">↓</span>
+        </button>
+        <div class="services__content">
+          <p class="services__text">
+            Identidades visuales con propósito. Desde el concepto hasta el manual de marca, ayudo a que tu negocio
+            destaque y conecte con su audiencia real.
+          </p>
+        </div>
+      </div>
+
+      <div class="services__item">
+        <button class="services__header" title="Packaging" onclick="toggleService(this)">
+          <span class="services__title">Packaging</span>
+          <span class="services__arrow">↓</span>
+        </button>
+        <div class="services__content">
+          <p class="services__text">
+            Empaques que cuentan historias. Cuido cada detalle táctil y visual para que la experiencia de unboxing sea
+            inolvidable.
+          </p>
+        </div>
+      </div>
+
+      <div class="services__item">
+        <button class="services__header" title="UI/UX & Web Design" onclick="toggleService(this)">
+          <span class="services__title">UI/UX & Web Design</span>
+          <span class="services__arrow">↓</span>
+        </button>
+        <div class="services__content">
+          <p class="services__text">
+            Interfaces intuitivas y estéticas. Desarrollo sitios web que no solo son bonitos, sino que están optimizados
+            para la conversión y la experiencia de usuario.
+          </p>
+        </div>
+      </div>
+
+      <div class="services__item">
+        <button class="services__header" title="Ilustración" onclick="toggleService(this)">
+          <span class="services__title">Ilustración</span>
+          <span class="services__arrow">↓</span>
+        </button>
+        <div class="services__content">
+          <p class="services__text">
+            Arte personalizado para proyectos únicos. Aporto ese toque humano y distintivo a través de ilustraciones
+            digitales o analógicas a medida.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECCION DE PROYECTOS DESTACADOS -->
+
+    <section class="portfolio">
+      <h2 class="portfolio__title">
+        PROYECTOS DESTACADOS
+      </h2>
+
+      <div class="portfolio__grid">
+
+        <article class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="images/AM0.webp.webp" type="image/webp">
+              <source srcset="images/AM0.jpg" type="image/jpeg">
+              <img src="images/AM0.jpg" alt="Althea Marina" class="project-card__img" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="project-card__title">Althea Marina</h3>
+          <p class="project-card__category">Packaging</p>
+          <a href="AltheaMarina.html" title="Ver proyecto Althea Marina" class="project-card__link">Ver proyecto</a>
+
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="images/SN2.webp.webp" type="image/webp">
+              <source srcset="images/SN2.jpg" type="image/jpeg">
+              <img src="images/SN2.jpg" alt="Super Nova" class="project-card__img" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="project-card__title">Super Nova</h3>
+          <p class="project-card__category">Diseño editorial, UI/UX & Desarrollo Web</p>
+          <a href="SuperNova.html" title="Ver proyecto Super Nova" class="project-card__link">Ver proyecto</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="images/J0.webp.webp" type="image/webp">
+              <source srcset="images/J0.jpg" type="image/jpeg">
+              <img src="images/J0.jpg" alt="Jamin" class="project-card__img" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="project-card__title">Jammin</h3>
+          <p class="project-card__category">Branding & Packaging</p>
+          <a href="Jammin.html" title="Ver proyecto Jammin" class="project-card__link">Ver proyecto</a>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__image">
+            <picture>
+              <source srcset="images/EN0.webp.webp" type="image/webp">
+              <source srcset="images/EN0.jpg" type="image/jpeg">
+              <img src="images/EN0.jpg" alt="EL NIDO" class="project-card__img" loading="lazy">
+            </picture>
+          </div>
+          <h3 class="project-card__title">EL NIDO</h3>
+          <p class="project-card__category">Branding & Packaging</p>
+          <a href="ELNIDO.html" title="Ver proyecto EL NIDO" class="project-card__link">Ver proyecto</a>
+        </article>
+
+      </div>
+
+      <nav class="portfolio__footer">
+        <a href="proyectos.html" title="Ver todos los proyectos" class="portfolio__view-all">
+          Ver todos los proyectos →
+        </a>
+      </nav>
+
+    </section>
+
+    <!-- Contacto de la página de inicio -->
+    <section class="contact">
+      <div class="contact__container">
+        <h4 class="contact__pretext">¿Tienes algún proyecto en mente?</h4>
+        <a href="contacto.html" title="Ir a la página de Contacto" class="contact__link">
+          <span class="contact__word">Contactar</span>
+          <svg class="contact__scribble" viewBox="0 0 500 150" preserveAspectRatio="none">
+            <path d="M9.3,127.3c49.3-3,150.7-7.6,199.7-7.4c121.9,0.4,269.9,11.2,281,21.1c11.4,10.2-114.3,10.1-167.2,10.2
+        c-168.3,0.4-312.3-11.2-312.3-11.2s351.6-13,428.1-13.1" />
+          </svg>
+        </a>
+        <div class="contact__decoration">
+          <span>✨</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="index.html" title="Ir a la página de Inicio" class="footer__link">Inicio</a>
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="footer__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="footer__link">Sobre mí</a>
+        <a href="contacto.html" title="Ir a la página de Contacto" class="footer__link">Contacto</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://wa.me/620171067?text=Hola%20quiero%20información" title="Abrir WhatsApp" target="_blank"
+          rel="noreferrer" class="footer__social-link" aria-label="WhatsApp">
+          <span class="social-icon">WhatsApp</span> </a>
+        <a href="https://www.linkedin.com/in/carlota-ruiz-nu%C3%B1ez-675740191/" title="Abrir LinkedIn" target="_blank"
+          rel="noreferrer" class="footer__social-link" aria-label="LinkedIn">
+          <span class="social-icon">LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="footer__copy">
+        <p>&copy; 2026 Lotti — Diseñadora Gráfica.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

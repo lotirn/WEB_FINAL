@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Althea Marina</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='css/main.css'>
+  <script src='js/main.js' defer></script>
+</head>
+
+
+
+<!-- BODY -->
+
+<body>
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <header class="header">
+    <nav class="nav">
+
+      <!-- MENÚ IZQUIERDO -->
+      <div class="nav__left">
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="nav__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="nav__link">Sobre mí</a>
+      </div>
+
+      <!-- LOGO CENTRADO -->
+      <div class="nav__logo">
+        <a href="index.html" title="Ir a la página de Inicio">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <!-- MENÚ DERECHO -->
+      <div class="nav__right">
+        <a href="contacto.html" title="Ir a la página de Contacto" class="nav__button nav__button--contacto">Contacto</a>
+        <button class="nav__hamburger" title="Abrir menú" onclick="toggleMenu()">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+      </div>
+
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="proyectos.html" title="Ir a la página de Proyectos">Proyectos</a>
+      <a href="about.html" title="Ir a la página Sobre mí">Sobre mí</a>
+      <a href="contacto.html" title="Ir a la página de Contacto">Contacto</a>
+
+    </div>
+  </header>
+
+
+  <main class="project-single">
+    <section class="project-hero">
+      <h1 class="project-title">ALTHEA MARINA</h1>
+      <p class="project-category">PACKAGING</p>
+    </section>
+
+    <section class="project-info-grid">
+      <div class="info-item">
+        <h2>Sector</h2>
+        <p>Dermocosmética natural</p>
+      </div>
+      <div class="info-item">
+        <h2>Año</h2>
+        <p>2024</p>
+      </div>
+      <div class="info-item">
+        <h2>Servicios</h2>
+        <p>Packaging</p>
+      </div>
+      <div class="info-text">
+        <p>Este proyecto consiste en el diseño de packaging para una gama de productos dermocosméticos formulados a
+          partir de activos de origen marino. El objetivo
+          era desarrollar una identidad visual que transmitiera la eficacia científica y el vínculo con el entorno
+          marino.
+          <br> Como respuesta a este planteamiento se propone una solución visual basada en el minimalismo, construyendo
+          el diseño sobre
+          una superficie completamente blanca reforzando la percepción de limpieza. La conexión con el origen marino de
+          los activos se introduce mediante ilustraciones de conchas y elementos orgánicos.
+        </p>
+      </div>
+    </section>
+
+    <div class="project-gallery">
+
+      <picture>
+        <source srcset="images/AM0.webp.webp" type="image/webp">
+        <source srcset="images/AM0.jpg" type="image/jpeg">
+        <img src="images/AM0.jpg" alt="Imagen 1" class="full-width" loading="lazy">
+      </picture>
+
+      
+
+      <div class="gallery-two-columns">
+        <picture>
+          <source srcset="images/AM1.webp.webp" type="image/webp">
+          <source srcset="images/AM1.jpg" type="image/jpeg">
+          <img src="images/AM1.jpg" alt="Imagen 2" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/AM2.webp.webp" type="image/webp">
+          <source srcset="images/AM2.jpg" type="image/jpeg">
+          <img src="images/AM2.jpg" alt="Imagen 3" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="gallery-five-columns">
+        <picture>
+          <source srcset="images/AM3.webp.webp" type="image/webp">
+          <source srcset="images/AM3.jpg" type="image/jpeg">
+          <img src="images/AM3.jpg" alt="Imagen Althea Marina" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/AM4.webp.webp" type="image/webp">
+          <source srcset="images/AM4.jpg" type="image/jpeg">
+          <img src="images/AM4.jpg" alt="Imagen 5" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/AM5.webp.webp" type="image/webp">
+          <source srcset="images/AM5.jpg" type="image/jpeg">
+          <img src="images/AM5.jpg" alt="Imagen 6" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/AM6.webp.webp" type="image/webp">
+          <source srcset="images/AM6.jpg" type="image/jpeg">
+          <img src="images/AM6.jpg" alt="Imagen 7" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/AM7.webp.webp" type="image/webp">
+          <source srcset="images/AM7.jpg" type="image/jpeg">
+          <img src="images/AM7.jpg" alt="Imagen 8" loading="lazy">
+        </picture>
+      </div>
+
+    </div>
+
+    <nav class="project-pagination">
+      
+      <a href="proyectos.html" class="back-grid" title="Volver a la galería de proyectos">Ver todos</a>
+      <a href="Jammin.html" class="next-project" title="Ir al siguiente proyecto">Siguiente →</a>
+    </nav>
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="nav__logo">
+        <a href="index.html" title="Ir a la página de Inicio">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="index.html" title="Ir a la página de Inicio" class="footer__link">Inicio</a>
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="footer__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="footer__link">Sobre mí</a>
+        <a href="contacto.html" title="Ir a la página de Contacto" class="footer__link">Contacto</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://wa.me/620171067?text=Hola%20quiero%20información" title="Abrir WhatsApp" target="_blank" rel="noreferrer" class="footer__social-link" aria-label="WhatsApp">
+          <span class="social-icon">WhatsApp</span> </a>
+        <a href="https://www.linkedin.com/in/carlota-ruiz-nu%C3%B1ez-675740191/" title="Abrir LinkedIn" target="_blank" rel="noreferrer" class="footer__social-link" aria-label="LinkedIn">
+          <span class="social-icon">LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="footer__copy">
+        <p>&copy; 2026 Lotti — Diseñadora Gráfica.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

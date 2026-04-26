@@ -1,0 +1,1814 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+:root { /* CUSTOM PROPERTIES */
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+    --accent-color: #8cff8c;/* Verde flúor para acentos */
+    --color-tertiary: #f9f9f9; /* Color terciario para fondos */
+    --color-scroll: #999; /* Color para la barra de scroll EN SUPER NOVA*/
+    /* Colores para imitar internet en la imagen de SUPER NOVA*/
+    --color-green: #27c93f; 
+    --color-orange: #ffbd2e;
+    --color-red: #ff5f56;
+    /* Colores para retoques*/
+    --color-gray: #ddd;
+    --color-dark: #333;
+}
+
+/* ==========================================================================
+   MENÚ DE NAVEGACIÓN
+   ========================================================================== */
+
+.header {
+    width: 100%; /* Para que ocupe todo el ancho */
+}
+
+.info-item h2 {
+    font-size: 1rem; /* Tamaño de fuente para los títulos secundarios */
+    font-weight: 500; /* Peso de la fuente para los títulos secundarios */
+    color: var(--color-scroll); /* Color del texto para los títulos secundarios */
+    margin: 0 0 1.25rem 0; /* Espacio debajo de los títulos secundarios */
+    
+}
+
+/* --- BARRA DE NAVEGACIÓN  --- */
+.nav {
+    display: flex; /* Flexbox para distribuir los elementos */
+    align-items: center; /* Centrado vertical */
+    position: fixed; /* Para que se quede fijo al hacer scroll */
+    top: 1.25rem; /* Un poco de margen desde el top */
+    left: 50%; /* Para centrar horizontalmente */
+    transform: translateX(-50%); /* siempre se quede en el centro */
+    width: 60vw; /* Ancho del nav, ajustable */
+    padding: .625rem 1.875rem; /* Espaciado interno */
+    z-index: 99;/* Quede siempre por encima */
+    border-radius: 50px; /* Bordes redondeados */
+    background: var(--color-secondary); /* Fondo blanco */
+    box-shadow: 0 .25rem .625rem rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar */
+}
+
+/* LINKS DEL MENÚ */
+.nav__link {
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-primary); /* Color negro  del texto */
+    font-weight: 500; /* Peso de la fuente */
+    transition: 0.3s; /* Transición suave */
+}
+
+/* --- NAV IZQUIERDO --- */
+.nav__left {
+    flex: 1; /* Ocupa el espacio disponible */
+    display: flex; /* Flexbox para distribuir los elementos */
+    gap: 1.875rem; /* espacio entre los enlaces */
+} 
+
+/* ENLACES COLOR AL HACER HOVER */
+.nav__left a:hover {
+    color: var(--accent-color);
+}
+/* Enlaces al hacer click */  
+.nav__left a:active {
+    color: var(--accent-color);
+}
+
+/* --- NAV LOGOTIPO --- */
+.nav__logo {
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: center; /* Alineación centrada */
+}
+
+/* --- LOGOTIPO MEDIDAS + TIEMPO--- */
+.nav__logo-img {
+    height: 2.5rem; /* Altura del logotipo */
+    transition: 0.3s; /* Transición suave */
+}
+
+/* --- MOVIMIENTO DEL LOGOTIPO --- */
+.nav__logo-img:hover {
+    transform: rotate(-5deg) scale(1.1); 
+}
+
+.nav__logo-img:active {
+    transform: scale(0.95); /* Efecto de "presionar" al hacer click */
+}
+
+/* --- NAV DERECHO --- */
+.nav__right {
+    /* --- MENÚ DE NAVEGACIÓN LADO DERECHO --- */
+    flex: 1; /* Ocupa el espacio disponible */
+    text-align: right; /* Alineación a la derecha */
+}
+
+/* BOTÓN CONTACTO */
+.nav__button {
+    text-decoration: none; /* Sin subrayado */
+    padding: .625rem 1.5rem; /* Espaciado */
+    border-radius: 3.125rem; /* Bordes redondeados */
+    transition: 0.3s; /* Transición suave */
+}
+
+.nav__button:hover {
+    color: var(--accent-color); /* Color al hacer hover */
+}
+
+.nav__button:active {
+    color: var(--accent-color); /* Color al hacer click */
+}
+
+.nav__button--contacto {
+    color: var(--color-primary); /* Color del texto del botón de contacto */
+}
+
+
+/* ==========================================================================
+   PÁGINA PRINCIPAL
+   ========================================================================== */
+
+/* HERO */
+.hero {
+    margin: 1.875rem 0 0 0; /* Para que no lo pise el nav fixed */
+    position: relative; /* Para posicionar el garabato */
+    width: 100%; /* Para que ocupe todo el ancho */
+    height: 100vh; /* Ocupa toda la pantalla */
+    display: flex; /* Flexbox para centrar el contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+    padding: 0 10%; /* Márgenes laterales */
+    background-color: var(--color-secondary); /* Fondo blanco */
+}
+
+.hero__content {
+    z-index: 10; /* Para que quede por encima del garabato */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.hero__title {
+    font-size: 10vw; /* Tamaño dinámico basado en el ancho de pantalla (MUY GRANDE) */
+    line-height: 0.9; /* Interlineado muy ajustado para look compacto */
+    font-weight: 800; /* Peso extra bold */
+    text-transform: uppercase; /* Todo mayúsculas */
+    letter-spacing: -0.3125rem;/* Letter-spacing negativo para que las letras se superpongan ligeramente */
+}
+
+.hero__ampersand {
+    color: var(--accent-color); /* El '&' en verde */
+    font-family: Georgia, serif; /* Cambiamos a serif solo para el & */
+    font-style: italic; /* Un toque de cursiva para el & */
+    font-weight: 400; /* Peso normal para el & */
+}
+
+.hero__subtitle {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para el subtítulo */
+    font-weight: 300; /* Peso más ligero para el subtítulo */
+    margin-top: 2rem; /* Espacio entre el título y el subtítulo */
+    opacity: 0.8; /* Un poco de transparencia */
+    letter-spacing: .0625rem; /* Espaciado entre letras para el subtítulo */
+}
+
+.hero__doodle {
+    position: absolute; /* Posición absoluta para colocar el garabato */
+    bottom: 10%; /* Posicionado abajo a la derecha */
+    right: 10%;
+    width: 15vw; /* Tamaño relativo */
+    height: 15vw;
+    z-index: 5; /* Para que quede detrás del contenido */
+}
+
+.hero__doodle-svg {
+    width: 100%; /* Para que ocupe todo el contenedor del garabato */
+    height: 100%; /* Para que ocupe todo el contenedor del garabato */
+    animation: doodle-float 6s infinite ease-in-out; /* Animación sutil para parecer que flota */
+}
+
+@keyframes doodle-float { /* Animación de flotación para el garabato */
+
+    0%,
+    100% {
+        transform: translateY(0); /* Posición inicial y final sin movimiento */
+    }
+
+    50% {
+        transform: translateY(6.25rem); /* Mueve el garabato hacia arriba */
+    }
+}
+
+/* SERVICIOS */
+.services {
+    background-color: var(--color-primary); /* Fondo negro para la sección de servicios */
+    padding: 6.25rem 5%; /* Espaciado */
+    color: var(--color-secondary); /* Color del texto */
+}
+
+.services__item {
+    border-bottom: .0625rem solid var(--color-dark); /* Línea divisoria sutil */
+}
+
+.services__header {
+    width: 100%; /* ancho completo */
+    padding: 2.5rem 0; /* Espaciado */
+    background: none; /* Fondo transparente */
+    border: none; /* sin bordes */
+    display: flex; /* flexbox */
+    justify-content: space-between; /*Espacio entre los elementos */
+    align-items: center; /* alineado al centro */
+    cursor: pointer; /* cursor cambia para saber que se puede presionar */
+    color: var(--color-secondary); /* color blanco */
+    transition: opacity 0.3s; /* ligera opacidad */
+}
+
+.services__header:hover {
+    opacity: 0.7; /* se vuelve más transparente al pasar el mouse por encima */
+}
+
+.services__title {
+    font-size: clamp(3rem, 8vw, 6rem); /* Letras muy grandes y fluidas */
+    font-weight: 800; /* Peso extra bold para un impacto visual fuerte */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: -0.125rem; /* Letter-spacing negativo para que se superponga el texto */
+    text-align: left;
+}
+
+.services__arrow {
+    font-size: 2.5rem; /* Tamaño grande para la flecha */
+    transition: transform 0.4s ease; /* Transición suave para la rotación de la flecha */
+}
+
+.services__content {
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden; /* Para ocultar el contenido cuando no está activo */
+    transition: max-height 0.4s ease-out;  /* Transición suave para expandir el contenido */
+}
+
+.services__text {
+    padding-bottom: 2.5rem; /* Espacio debajo del texto para que no quede pegado al siguiente título */
+    font-size: 1.2rem; /* Tamaño de fuente legible para el texto del servicio */
+    line-height: 1.6; /* Interlineado para mejorar la legibilidad */
+    max-width: 600px; /* Ancho máximo para que el texto no sea demasiado ancho */
+    color: var(--color-tertiary); /* Un gris claro para el texto del servicio, para que contraste con el fondo negro */
+}
+
+.services__item.active .services__arrow {
+    transform: rotate(180deg); /* La flecha gira hacia arriba */
+}
+
+.services__item.active .services__content {
+    max-height: 18.75rem; /* Ajusta según el largo de tu texto */
+  
+}
+
+/* Proyectos destacados */
+.portfolio {
+    max-width: 87.5rem; /* Ancho máximo para el contenedor del portfolio */
+    margin: 3.75rem auto; /* Centrado horizontal */
+    padding: 0 5%; /* espacio interno */
+}
+
+.portfolio__title {
+    font-size: clamp(2rem, 5vw, 4rem); /* Letras grandes pero controladas */
+    font-weight: 800; /* Peso extra bold para un impacto visual fuerte */
+    text-transform: uppercase; /* En mayúsculas */
+    letter-spacing: -0.125rem; /* Letter-spacing negativo para que se superponga el texto */
+    margin-bottom: 6.25rem; /* Espacio debajo del título */
+    border-bottom: 0.125rem solid var(--color-primary); /* Línea divisoria */
+    padding-bottom: 0.9375rem; /* Espacio interno debajo del título */
+}
+
+.portfolio__grid {
+    display: grid; /* Usamos grid para organizar los proyectos en filas y columnas */
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 2.5rem 1.875rem; /* Espacios distintos entre filas y columnas */
+}
+
+.project-card {
+    background-color: var(--color-tertiary); /* Fondo gris claro para las tarjetas de proyecto */
+    padding: 1.5625rem; /* Espaciado interno */
+    border-radius: .9375rem; /* Bordes redondeados */
+    display: flex; /* Usamos flexbox para organizar el contenido dentro de la tarjeta */
+    flex-direction: column; /* El contenido se organiza en columna */
+    border: 1px solid var(--color-tertiary); /* Borde del mismo color que el fondo para un efecto sutil */
+}
+
+.project-card__image {
+    width: 100%; /* Ancho completo para que la imagen ocupe todo el espacio disponible en la tarjeta */
+    height: 18.75rem; /* Altura fija para que todas las tarjetas tengan la misma altura, ajusta según tu diseño */
+    overflow: hidden; /* Para recortar la imagen si es más grande que el contenedor */
+    border-radius: .5rem; /* Bordes redondeados para la imagen */
+}
+
+.project-card__img {
+    width: 100%; /* Ancho completo para que la imagen ocupe todo el espacio del contenedor */
+    height: 100%; /* Altura completa para que la imagen ocupe todo el espacio del contenedor */
+    object-fit: cover; /* Para que la imagen se recorte y llene el contenedor sin deformarse */
+}
+
+.project-card__title {
+    margin-top: .9375rem; /* Espacio entre la imagen y el título */
+    font-size: 1.6rem; /* Tamaño de fuente para el título del proyecto */
+    font-weight: 800; /* Peso extra bold para que el título destaque */
+    text-transform: uppercase; /* En mayúsculas para un impacto visual fuerte */
+    letter-spacing: -1px; /* Letter-spacing negativo para que las letras se superpongan ligeramente */
+}
+
+.project-card__category {
+    color: var(--color-dark); /* Un gris oscuro para la categoría del proyecto, para que contraste con el título */
+    margin-bottom: 1.25rem; /* Espacio debajo de la categoría */
+    font-size: 1rem; /* Tamaño de fuente para la categoría del proyecto */
+}
+
+.project-card__link {
+    display: inline-block; /* Para que el enlace se comporte como un bloque y podamos aplicar padding */
+    border-bottom: .125rem solid var(--accent-color); /* Línea debajo del enlace con el color de acento */
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-primary); /* Color del texto del enlace */
+    font-weight: 700; /* Peso de la fuente para el enlace */
+    text-transform: uppercase; /* En mayúsculas para un impacto visual fuerte */
+    font-size: 0.85rem; /* Tamaño de fuente para el enlace */
+    align-self: flex-start; /* Para que el enlace se alinee al inicio de la tarjeta */
+    transition:  0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.project-card__link:hover {
+    color: var(--accent-color); /* Cambia el color del texto al hacer hover */
+    padding-left: .625rem; /* Agrega un poco de espacio a la izquierda para un efecto de movimiento */
+}
+
+.project-card__link:active {
+    color: var(--accent-color); /* Cambia el color del texto al hacer click */
+}
+
+.portfolio__footer {
+    margin: 2.5rem 0 0 0; /* Espacio arriba para separar del contenido anterior */
+    color: var(--color-primary); /* Color del texto del enlace de "Ver todo" */
+    display: inline-block; /* Para que el enlace se comporte como un bloque y podamos aplicar padding */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 700; /* Peso de la fuente para el enlace de "Ver todo" */
+    text-transform: uppercase; /* En mayúsculas para un impacto visual fuerte */
+    font-size: 0.85rem; /* Tamaño de fuente para el enlace de "Ver todo" */
+    align-self: flex-start; /* Para que el enlace se alinee al inicio del contenedor */
+    transition: 0.3s ease; /* Transición suave para el efecto hover */
+    display: flex; /* Usamos flexbox para alinear el texto y la flecha */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+}
+
+.portfolio__footer:hover {
+    padding-left: .825rem; /* Agrega un poco de espacio a la izquierda para un efecto de movimiento */
+}
+
+.portfolio__footer:active {
+    padding-left: .825rem; /* Agrega un poco de espacio a la izquierda para un efecto de movimiento al hacer click */
+}
+
+.portfolio__view-all {
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 600; /* Peso de la fuente para el texto del enlace de "Ver todo" */
+    color: var(--color-primary); /* Color del texto del enlace de "Ver todo" */
+} 
+
+.contact {
+    text-align: center; /* Centrado del texto para la sección de contacto */
+    background-color: var(--color-secondary); /* Fondo blanco para la sección de contacto */
+}
+
+.contact__pretext {
+    font-family: 'Inter', sans-serif; /* Fuente más ligera y moderna para el pretexto */
+    font-size: 1.25rem; /* Tamaño de fuente para el pretexto */
+    font-weight: 500; /* Peso de la fuente para el pretexto */
+    color: var(--color-dark); /* Color del texto del pretexto */
+}
+
+.contact__link {
+    display: inline-block; /* Para que el enlace se comporte como un bloque y podamos aplicar padding */
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-primary); /* Color del texto del enlace de contacto */
+    font-size: 6rem; /* Tamaño de fuente grande para el enlace de contacto */
+    font-weight: 900; /* Peso extra bold para que el enlace de contacto destaque */
+    line-height: 1; /* Para que las letras estén más juntas verticalmente */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de crecimiento al hacer hover */
+}
+
+.contact__link:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del enlace de contacto al hacer hover */
+}
+
+.contact__link:active {
+    transform: scale(1.05); /* Aumenta el tamaño del enlace de contacto al hacer click */
+}
+
+.contact__word {
+    position: relative; /* Para posicionar el garabato detrás de la palabra */
+    display: inline-block; /* Para que el enlace se comporte como un bloque y podamos aplicar padding */
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-primary); /* Color del texto del enlace de contacto */
+    font-size: 8rem; /* Tamaño de fuente muy grande para la palabra de contacto */
+    font-weight: 900; /* Peso extra bold para que la palabra de contacto destaque */
+    line-height: 1; /* Para que las letras estén más juntas verticalmente */
+    transition: transform 0.8s ease-in-out; /* Transición suave para el efecto de crecimiento al hacer hover */
+}
+
+.contact__word:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la palabra de contacto al hacer hover */
+}
+
+.contact__word:active {
+    transform: scale(1.05); /* Aumenta el tamaño de la palabra de contacto al hacer click */
+}
+
+/* ESTILO DEL GARABATO */
+.contact__scribble {
+    position: absolute; /* Posición absoluta para colocar el garabato detrás de la palabra */
+    top: 50%; /* Posicionado en el centro vertical de la palabra */
+    left: 50%; /* Posicionado en el centro horizontal de la palabra */
+    transform: translate(-50%, -50%); /* Para centrar el garabato exactamente detrás de la palabra */
+    width: 100%; /* Ancho completo para que el garabato cubra toda la palabra */
+    height: 150%; /* Altura un poco mayor para que el garabato se extienda más allá de la palabra */
+    fill: none; /* Sin relleno para que solo se vea el trazo del garabato */
+    stroke: var(--accent-color); /* Color del trazo del garabato, usando el color de acento para que destaque */
+    stroke-width: 4; /* Grosor del trazo del garabato */
+    stroke-linecap: round; /* Para que los extremos del trazo sean redondeados */
+    stroke-linejoin: round; /* Para que las uniones del trazo sean redondeadas */
+    pointer-events: none; /* Para que el garabato no interfiera con los eventos del mouse en la palabra */
+    /* --- EFECTO DE DIBUJO --- */
+    stroke-dasharray: 1500; /* Esto hace que el trazo esté completamente "oculto" al principio */
+    stroke-dashoffset: 1500; /* Esto hace que el trazo esté completamente "oculto" al principio y se dibuje al hacer hover */
+} 
+
+/* Al pasar el ratón sobre contactar */
+.contact__link:hover .contact__scribble {
+    animation: dibujar 1.5s ease-in-out forwards; /* Inicia la animación de dibujo al hacer hover */
+}
+
+@keyframes dibujar {
+    to {
+        stroke-dashoffset: 0; /* Esto hace que el trazo se dibuje completamente al final de la animación */
+    }
+}
+
+.contact__decoration {
+    font-size: 3rem; /* Tamaño grande para las estrellas decorativas */
+    margin-top: 1.875rem; /* Espacio entre la palabra de contacto y las estrellas */
+    animation: float 3s ease-in-out infinite; /* Animación de flotación para las estrellas */
+}
+
+/* ANIMACIÓN  DE LAS ESTRELLAS*/
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0); /* Posición inicial */
+    }
+
+    50% {
+        transform: translateY(20px); /* Mueve las estrellas hacia abajo */
+    }
+}
+
+/* ==========================================================================
+  FOOTER
+   ========================================================================== */
+
+.footer {
+    background-color: var(--color-tertiary); /* Fondo blanco para el footer */
+    padding: 5rem 5% 2.5rem 5%; /* Espaciado */
+    border-top: 1px solid var(--color-scroll); /* Línea divisoria sutil en la parte superior del footer */
+}
+
+/* CONTENEDOR DEL FOOTER */
+.footer__container {
+    max-width: 75rem; /* Ancho máximo para el contenido del footer */
+    margin: 0 auto; /* Centrado horizontal */
+    display: flex; /* Usamos flexbox para organizar el contenido del footer */
+    flex-direction: column; /* El contenido se organiza en columna */
+    align-items: center; /* Centrado horizontal de los elementos del footer */
+    gap: 2.5rem; /* Espacio entre los elementos del footer */
+}
+
+/* NAV DEL FOOTER */
+.footer__nav {
+    display: flex; /* Usamos flexbox para organizar los enlaces del footer */
+    gap: 1.875rem; /* Espacio entre los enlaces del footer */
+
+}
+
+/* LINKS NAV FOOTER */
+.footer__link {
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-primary); /* Color del texto de los enlaces del footer */
+    font-weight: 500; /* Peso de la fuente para los enlaces del footer */
+    font-size: 0.9rem; /* Tamaño de fuente para los enlaces del footer */
+    text-transform: uppercase; /* En mayúsculas */
+    letter-spacing: 1px; /* Espaciado entre letras para los enlaces del footer */
+    transition: color 0.3s; /* Transición suave para el cambio de color al hacer hover */
+}
+
+.footer__link:hover {
+    color: var(--accent-color); /* Cambia el color de los enlaces del footer al hacer hover */
+}
+
+.footer__link:active {
+    color: var(--accent-color); /* Cambia el color de los enlaces del footer al hacer click */
+}
+
+/* SOCIALS DEL FOOTER */
+.footer__social { 
+    display: flex; /* Usamos flexbox para organizar los enlaces sociales del footer */
+    gap: 1.25rem; /* Espacio entre los enlaces sociales del footer */
+}
+
+.footer__social-link {
+    text-decoration: none; /* Sin subrayado */
+    color: var(--color-primary); /* Color del texto de los enlaces sociales del footer */
+    font-weight: 700; /* Peso de la fuente para los enlaces sociales del footer */
+    padding: .625rem 1.25rem; /* Espaciado interno para que los enlaces sociales sean más grandes y fáciles de clicar */
+    border: 1px solid var(--color-primary); /* Borde del mismo color que el texto para un efecto de botón */
+    border-radius: 3.125rem; /* Bordes redondeados para los enlaces sociales del footer */
+    transition: 0.3s ease; /* Transición suave para el efecto hover de los enlaces sociales del footer */
+}
+
+.footer__social-link:hover {
+    background-color: var(--accent-color); /* Cambia el fondo de los enlaces sociales del footer al hacer hover */
+    border-color: var(--accent-color); /* Cambia el color del borde de los enlaces sociales del footer al hacer hover */
+}
+
+.footer__social-link:active {
+    background-color: var(--accent-color); /* Cambia el fondo de los enlaces sociales del footer al hacer click */
+    border-color: var(--accent-color); /* Cambia el color del borde de los enlaces sociales del footer al hacer click */
+}
+
+/* COPYRIGHT */
+.footer__copy {
+    margin-top: 1.25rem; /* Espacio entre los enlaces sociales del footer y el texto de copyright */
+    font-size: 0.75rem; /* Tamaño de fuente para el texto de copyright */
+    color: var(--color-dark); /* Un gris para el texto de copyright, para que contraste con los enlaces sociales del footer */
+}
+
+/* ==========================================================================
+   PÁGINA DE PROYECTOS
+   ========================================================================== */
+
+.projects {
+    background-color: var(--color-primary); /* color de fondo negro para la sección de proyectos */
+    padding: 5rem 5%; /* Espacio alrededor del contenido */
+    min-height: 100vh; /* Altura mínima del 100% de la ventana */
+    font-family: sans-serif; /* Fuente de texto para la sección de proyectos */
+}
+
+.projects__item {
+    border-bottom: .0625rem solid var(--color-scroll); /* Línea divisora entre elementos */
+}
+
+/* Encabezado del Acordeón */
+.projects__header {
+    width: 100%; /* Ancho completo */
+    display: flex; /* Usamos flexbox para organizar el contenido del encabezado */
+    justify-content: space-between; /* Título izquierda, flecha derecha */
+    align-items: center; /* Alineación vertical del contenido */
+    padding: 1.875rem 0; /* Espacio */
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor */
+    text-align: left; /* Texto alineado a la izquierda */
+    color: var(--color-secondary);  
+    transition: opacity 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+
+.projects__header:hover {
+    opacity: 0.8; /* Se vuelve un poco más transparente al pasar el mouse por encima */
+}
+
+.projects__header:active {
+    opacity: 0.8; /* Se vuelve un poco más transparente al hacer click */
+}
+
+.projects__title {
+    font-size: clamp(3rem, 8vw, 6rem); /* Letras muy grandes y fluidas */
+    font-weight: 800; /* Peso extra bold para un impacto visual fuerte */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: -2px; /* Letter-spacing negativo para que se superponga el texto */
+}
+
+.projects__arrow {
+    font-size: 2rem; /* Tamaño grande para la flecha */
+    transition: transform 0.4s ease; /* Transición suave para la rotación de la flecha */
+}
+
+/* Contenido Oculto */
+.projects__content {
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden; /* Para ocultar el contenido cuando no está activo */
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); /* Transición suave para expandir el contenido con un efecto de rebote */
+}
+
+/* Estado Activo */
+.projects__item.active .projects__content {
+    max-height: 62.5rem; /* Un valor suficientemente grande para mostrar el contenido completo */
+    transition: max-height 1s ease-in-out; /* Transición suave para expandir el contenido con un efecto de rebote */
+}
+
+.projects__item.active .projects__arrow {
+    transform: rotate(180deg); /* La flecha gira hacia abajo */
+}
+
+/* Área de revelación */
+.projects__reveal {
+    padding: 1.25rem 0 3.75rem 0; /* Espacio dentro del área de revelación */
+    display: flex; /* Usamos flexbox para organizar el contenido dentro del área de revelación */
+    flex-direction: column; /* El contenido se organiza en columna */
+    gap: 1.25rem; /* Espacio entre los elementos dentro del área de revelación */
+}
+
+/* Botón Verde */
+.projects__btn {
+    align-self: flex-start; /* Para que el botón se alinee al inicio del área de revelación */
+    padding: 1.125rem 2.8125rem; /* Padding para el botón */
+    background-color: var(--accent-color); /* Fondo verde para el botón */
+    color: var(--color-primary); /* Color del texto del botón */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 700; /* Peso de fuente bold */
+    text-transform: uppercase; /* En mayúsculas para un impacto visual fuerte */
+    border-radius: 3.125rem; /* Bordes redondeados para el botón */
+    transition: 0.3s ease; /* Transición suave para el efecto hover del botón */
+}
+
+.projects__btn:hover {
+    background-color: var(--color-secondary); /* Cambia el fondo del botón a blanco al hacer hover */
+    color: var(--color-primary); /* Cambia el color del texto del botón */
+    transform: translateY(-3px); /* Agrega un efecto de elevación al hacer hover */
+}
+
+.projects__btn:active {
+    background-color: var(--color-secondary); /* Cambia el fondo del botón a blanco al hacer click */
+    color: var(--color-primary); /* Cambia el color del texto del botón */
+    transform: translateY(-3px); /* Agrega un efecto de elevación al hacer click */
+}
+
+/* ==========================================================================
+   PÁGINA SOBRE MÍ
+   ========================================================================== */
+
+.about {
+    padding-top: 9.375rem; /* Para que no lo pise el nav fixed */
+    background-color: var(--color-secondary); /* Fondo blanco para la sección de sobre mí */
+}
+
+.about__hero {
+    text-align: center; /* Centrado del texto para el hero de sobre mí */
+    padding: 0 5%; /* Espacio lateral para que el texto no quede pegado a los bordes en pantallas pequeñas */
+    margin-bottom: 6.25rem; /* Espacio debajo del hero para separar del contenido */
+}
+
+.about__title {
+    font-size: clamp(4rem, 12vw, 10rem); /* Tamaño de fuente grande y fluida para el título de sobre mí */
+    font-weight: 900; /* Peso extra bold para que el título de sobre mí destaque */
+    line-height: 0.8; /* Para que las letras estén más juntas verticalmente */
+    letter-spacing: -0.25rem; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte */
+    margin-bottom: 1.875rem; /* Espacio debajo del título para separar del subtítulo */
+}
+
+.about__highlight {
+    color: var(--accent-color); /* El texto destacado en verde para resaltar la palabra "CARLOTA" */
+    -webkit-text-stroke: .125rem var(--color-primary); /* Agrega un trazo al texto negro */
+}
+
+.about__tagline {
+    font-size: 1.5rem; /* Tamaño de fuente para el subtítulo */
+    max-width: 37.5rem; /* tamaño maximo para el subtítulo */
+    margin: 0 auto; /* Centra el subtítulo */
+    font-weight: 300; /* Peso de fuente normal */
+    color: var(--color-dark); /* Color del texto */
+}
+
+/* CONTENT */
+.about__content {
+    padding: 6.25rem 5%; /* Espacio dentro del área de contenido */
+}
+
+.about__grid {
+    display: grid; /* Usamos grid para organizar el contenido */
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+    gap: 5rem; /* Espacio entre las columnas */
+    align-items: center; /* Centrado */
+}
+
+.about__image-wrapper {
+    position: relative; 
+}
+
+.about__image {
+    width: 100%; /* Ancho completo */
+    border-radius: 1.5625rem; 
+}
+
+/* TEXTO */
+.about__subtitle {
+    font-size: 3rem; 
+    font-weight: 800;
+    margin-bottom: 1.875rem; /* Espacio debajo del subtítulo */
+    border-bottom: .1875rem solid var(--color-primary); /* Línea debajo del subtítulo */
+    display: inline-block; /* Para que la línea solo ocupe el ancho del texto */
+}
+
+.about__paragraph {
+    font-size: 1.2rem;
+    line-height: 1.8; /* Interlineado para mejorar la legibilidad */
+    margin-bottom: 1.25rem;
+    color: var(--color-dark);
+}
+
+/* VALUES */
+.about__values {
+    margin-top: 2.5rem;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.about__value {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.about__value-number {
+    color: var(--accent-color); /* El número en verde para destacar */
+    display: block; /* Para que el número esté en una línea separada */
+    font-size: 0.7rem;
+}
+
+/* BLOQUE CAPACIDADES */
+.skills {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    padding: 6.25rem 5%;
+    margin-top: 6.25rem;
+}
+
+.skill__header { /* Encabezado del bloque de capacidades */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.125rem;
+}
+
+.skills__title { /* Título del bloque de capacidades */
+    font-size: 2rem;
+    margin-bottom: 3.125rem;
+    text-align: center;
+}
+
+.skills__row { /* Fila de capacidades */
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5625rem 0;
+    border-bottom: .0625rem solid var(--color-scroll);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+    PÁGINA DE CONTACTO
+   ========================================================================== */
+
+.hablemos {
+    padding-top: 11.25rem; /* Para que no lo pise el nav fixed */
+    padding-bottom: 6.25rem;
+    background-color: var(--color-secondary);
+    min-height: 100vh;
+}
+
+/* GRID */
+.contact__grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6.25rem;
+    align-items: start; /* Alinea el contenido al inicio de cada columna */
+}
+
+/* TITULAR */
+.contact__title {
+    font-size: clamp(4rem, 8vw, 7rem); /* Tamaño de fuente grande y fluida para el título de contacto */
+    line-height: 0.9;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.1875rem; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte */
+    margin-bottom: 3.125rem;
+}
+
+.contact__highlight {
+    color: var(--accent-color);
+    display: block; /* Para que el texto destacado esté en una línea separada */
+}
+
+/* DESCRIPCIÓN */
+.contact__description {
+    font-size: 1.2rem;
+    color: var(--color-dark);
+    line-height: 1.6;
+    margin-bottom: 3.125rem;
+}
+
+/* DETAILS */
+.contact__detail {
+    margin-bottom: 1.875rem;
+    align-content: center;
+}
+
+.contact__label { /* Etiqueta para cada detalle de contacto (Email, Teléfono, etc.) */
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: .125rem;
+    color: var(--color-dark);
+    margin-bottom: .3125rem;
+}
+
+.contact__link { /* Enlace para cada detalle de contacto */
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.contact__link:hover {
+    color: var(--accent-color);
+}
+
+.contact__link:active {
+    color: var(--accent-color);
+}
+
+/* SOCIAL */
+.contact__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: .9375rem;
+    width: 100%;
+}
+
+.contact__social-link {
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: underline; /* Subrayado para indicar que es un enlace */
+    color: inherit; /* Para que mantenga el color del texto del padre */
+    transition: all 0.3s ease;
+}
+
+/* CRECIMIENTO */
+.contact__social-link:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del enlace al hacer hover */
+    color: var(--accent-color); /* Cambia el color del enlace al hacer hover */
+}
+
+.contact__social-link:active {
+    transform: scale(1.1); /* Aumenta el tamaño del enlace al hacer click */
+    color: var(--accent-color); /* Cambia el color del enlace al hacer click */
+}
+
+/* FORM CONTAINER */
+.contact__form-wrapper {
+    background: var(--color-gray);
+    padding: 3.125rem;
+    border: .0625rem solid var(--color-tertiary);
+    border-radius: 1.875rem;
+}
+
+/* FIELD */
+.contact__field {
+    margin-bottom: 3.125rem;
+}
+
+/* INPUTS */
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    padding: .9375rem 0;
+    border: none;
+    border-bottom: .0938rem solid var(--color-primary);
+    background: transparent;
+    font-family: inherit;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+    border-bottom-color: var(--accent-color);
+}
+
+/* BOTÓN DE ENVÍO */
+.contact__button {
+    width: 100%;
+    padding: 1.25rem;
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: 3.125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact__button:hover {
+    background-color: var(--accent-color);
+    color: var(--color-primary);
+    transform: translateY(-0.3125rem);
+}
+
+.contact__button:active {
+    background-color: var(--accent-color);
+    color: var(--color-primary);
+    transform: translateY(-0.3125rem);
+}
+
+/* ==========================================================================
+    PÁGINA INDIVIDUAL DE PROYECTO
+    ALTHEA MARINA
+   ========================================================================== */
+.project-single {
+    padding-top: 9.375rem; /* Para que no lo pise el nav fixed */
+    background-color: var(--color-secondary);
+    min-height: 100vh;
+}
+
+.project-hero {
+    padding: 0 5%;
+    margin-bottom: 5rem; /* Espacio debajo del hero para separar del contenido */
+    text-align: center;
+}
+
+.project-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 900;
+    letter-spacing: -0.25rem;
+    line-height: 0.9;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+}
+
+.project-category {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Ficha técnica */
+.project-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 2fr;
+    gap: 2.5rem;
+    padding: 3.75rem 5%;
+    border-top: .0625rem solid var(--color-tertiary);
+    border-bottom: .0625rem solid var(--color-tertiary);
+    margin-bottom: 5rem;
+}
+
+.info-item span {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-gray);
+    margin-bottom: .625rem;
+}
+
+.info-item p {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.info-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-dark);
+}
+
+.project-gallery { /* Galería */
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 0 5%;
+    max-width: 56.25rem; /* Esto hace que la galería sea más estrecha y elegante */
+    margin: 0 auto 6.25rem auto; /* Centra la galería y le da margen abajo */
+}
+
+.gallery-two-columns { /* Para que las imágenes de dos columnas sean aún más pequeñas */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    width: 100%;
+    align-items: stretch; /* Fuerza a que los contenedores midan lo mismo */ 
+}
+
+.gallery-two-columns picture img { /* Estilo para las imágenes de dos columnas */
+    width: 100%;
+    height: 15rem; /* Altura fija para que las imágenes sean más pequeñas y uniformes */
+    object-fit: cover;
+    border-radius: .25rem;
+    display: block;
+}
+
+.gallery-five-columns { /* Fila para 5 imágenes pequeñas */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Crea 5 columnas iguales */
+    gap: 1.25rem; /* Espacio pequeño entre ellas */
+    width: 100%;
+}
+
+.project-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: .25rem; /* Un borde muy sutil */
+    transition: transform 0.3s ease;
+}
+
+.project-pagination { /* Paginación */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6.25rem 5%;
+}
+
+.project-pagination a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+/* ==========================================================================
+    PÁGINA INDIVIDUAL DE PROYECTO
+    JAMMIN
+   ========================================================================== */
+
+.info-item span {
+    display: block; /* Para que el título de cada dato esté en una línea separada */
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--color-gray);
+    margin-bottom: 1.25rem;
+}
+
+.info-item p {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-primary);
+}
+
+.info-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--color-dark);
+}
+
+.project-actions { /* Botones de Acción (Vídeo y Web) */
+    display: flex;
+    gap: .9375rem;
+    margin-top: 1.5625rem;
+    flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+}
+
+.btn-play-video,
+.btn-view-web { 
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    padding: .75rem 1.5rem;
+    border-radius: 3.125rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    border: none;
+}
+
+.btn-play-video { /* Estilo "Ver Vídeo" */
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.btn-play-video:hover { /* Hover para "Ver Vídeo" */
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    color: var(--color-primary); /* Cambia el color del texto al hacer hover para que se vea mejor */
+}
+
+.btn-play-video:active { /* Click para "Ver Vídeo" */
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    color: var(--color-primary); /* Cambia el color del texto al hacer click para que se vea mejor */
+}
+
+/* El Modal del Vídeo (Lightbox con efecto cristal sutil) */
+.video-modal {
+    display: none;  /* Oculto inicialmente */
+    position: fixed; /* Para que se quede fijo en la pantalla */
+    z-index: 99; /* Por encima de todo */
+    left: 0; 
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo gris muy opaco */
+    backdrop-filter: blur(.3125rem); /* Desenfoque de fondo */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+}
+
+.modal-content {
+    width: 80%;
+    max-width: 62.5rem; /* Ancho máximo para el vídeo */
+    aspect-ratio: 16/9; /* Se mantiene la proporción de vídeo */
+}
+
+.modal-content video {
+    width: 100%;
+    height: 100%;
+    outline: none; /* Sin borde de enfoque */
+    box-shadow: 0 .625rem 3.125rem rgba(0, 0, 0, 0.5);
+    background-color: var(--color-primary);
+}
+
+.project-pagination a:hover {
+    color: var(--accent-color);
+}
+
+.project-pagination a:active {
+    color: var(--accent-color);
+}
+
+.project-extra-gallery { /* Sección contenedora de la galería de latas*/
+    padding: 0 5%;
+    max-width: 900px;
+    margin: 0 auto 6.25rem auto;
+}
+
+.gallery-extra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 1.25rem;
+}
+
+.gallery-extra-grid img { /* Estilo para las imágenes de la galería de latas */
+    width: 100%;
+    height: 17.5rem;
+    object-fit: cover;
+    border-radius: .25rem;
+    display: block;
+}
+
+
+/* ==========================================================================
+    PÁGINA INDIVIDUAL DE PROYECTO
+    SUPERNOVA
+   ========================================================================== */
+
+/* --- CONTENEDOR NAVEGADOR (Captura Larga) --- */
+.web-scroll-container {
+    width: 100%;
+    max-width: 56.25rem;
+    margin: 2.5rem auto;
+    border: .0625rem solid var(--color-tertiary);
+    border-radius: 0.625rem;
+    overflow: hidden; /* Para que el contenido no se salga del contenedor */
+    background: var(--color-secondary);
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.1);
+}
+
+/* Cabecera simulada del navegador */
+.browser-header {
+    background: var(--color-secondary);
+    padding: 0.625rem 0.9375rem;
+    display: flex;
+    align-items: center;
+    gap: 0.9375rem;
+    border-bottom: 0.0625rem solid var(--color-tertiary);
+}
+
+.browser-header .dots {
+    display: flex;
+    gap: .375rem;
+}
+
+.browser-header .dots span { /* Rojo */
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: var(--color-red);
+    
+}
+
+.browser-header .dots span:nth-child(2) { /* Naranja */
+    background: var(--color-orange);
+}
+
+.browser-header .dots span:nth-child(3) {  /* Verde */
+    background: var(--color-green);
+}
+
+.url-bar { /* Barra de URL simulada */
+    background: var(--color-secondary);
+    font-size: 0.7rem;
+    color: var(--color-gray);
+    padding: 0.25rem 0.9375rem;
+    border-radius: 0.25rem;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.browser-content { /* Contenedor del scroll interno */
+    width: 100%;
+    height: 37.5rem; /* Altura de la "ventana" de visualización */
+    overflow-y: scroll; /* Permite scroll vertical */
+    overflow-x: hidden;
+    cursor: grab;
+}
+
+.browser-content:active {
+    cursor: grabbing; /* Cambia el cursor al hacer clic para indicar que se puede arrastrar */
+}
+
+.long-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.scroll-hint {
+    text-align: center;
+    font-size: 0.7rem;
+    padding: 0.625rem;
+    background: var(--color-secondary);
+    color: var(--color-gray);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .0625rem;
+}
+
+/* ==========================================================================
+    PÁGINA INDIVIDUAL DE PROYECTO
+    PURE BEAT
+   ========================================================================== */
+.gallery-hero img { /* Imagen hero de la galería */
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+}
+
+.gallery-three-columns { /* Fila de 3: Imágenes pequeñas*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.gallery-three-columns img {
+    height: 18.75rem; /* Altura más corta para las fotos pequeñas */
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+/* ==========================================================================
+    PÁGINA INDIVIDUAL DE PROYECTO
+    EL NIDO
+   ========================================================================== */
+
+.gallery-editorial { /*2 imágenes horizontales más panorámicas) */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.gallery-editorial img {
+    height: 21.875rem; /* Altura para imágenes panorámicas */
+    object-fit: cover;
+    border-radius: 0.375rem;
+}
+
+
+/* ==========================================================
+NAV RESPONSIVE MENU HAMBURGUESA
+========================================================== */
+.nav__hamburger { /* Estilo para el icono de hamburguesa en móvil */
+    display: none; /* Oculto por defecto, se muestra solo en móvil */
+    flex-direction: column; /* Las líneas del icono se organizan en columna */
+    gap: .3125rem; /* Espacio entre las líneas del icono */
+    background: none; /* Sin fondo para el botón de hamburguesa */
+    border: none; /* Sin borde para el botón de hamburguesa */
+}
+
+.nav__hamburger-line {
+    width: 1.5625rem; /* Ancho de cada línea del icono de hamburguesa */
+    height: .125rem; /* Grosor de cada línea del icono de hamburguesa */
+    background: var(--color-primary); /* Color de las líneas del icono de hamburguesa */
+    border-radius: .0625rem; /* Bordes redondeados para las líneas del icono de hamburguesa */
+}
+
+.mobile-menu { /* MENÚ DESPLEGABLE MOBILE */
+    display: none; /* Oculto por defecto, se muestra solo cuando se activa el menú */
+    position: fixed; /* Para que el menú se quede fijo en la pantalla */
+    top: 5.625rem; /* Justo debajo del nav para que no lo tape */
+    left: 50%; /* Para centrar el menú horizontalmente */
+    transform: translateX(-50%); /* Para centrar el menú horizontalmente */
+    width: 90%; /* Ancho del menú, se ajusta al tamaño de la pantalla */
+    background: var(--color-secondary); /* Fondo blanco para el menú desplegable */
+    border-radius: 1.5625rem; /* Bordes redondeados para el menú desplegable */
+    padding: 1.875rem; /* Espacio dentro del menú desplegable */
+    flex-direction: column; /* Las opciones del menú se organizan en columna */
+    gap: 1.25rem; /* Espacio entre las opciones del menú */
+    text-align: center; /* Centrado del texto dentro del menú */
+    box-shadow: 0 .625rem 1.875rem rgba(0, 0, 0, 0.15); /* Sombra para darle profundidad al menú desplegable */
+    z-index: 98; /* Para que el menú desplegable esté por debajo del nav pero por encima de otros elementos */
+}
+
+.mobile-menu a {
+    text-decoration: none; /* Sin subrayado para los enlaces del menú */
+    color: var(--color-primary); /* Color del texto para los enlaces del menú */
+    font-weight: 600; /* Texto en negrita */
+    font-size: 1.2rem;  /* Tamaño de fuente para los enlaces del menú */
+}
+
+.mobile-menu.active {
+    display: flex; /* Muestra el menú desplegable cuando se activa la clase "active" */
+}
+
+
+/* ==========================================================
+RESPONSIVES
+========================================================== */
+@media (max-width: 768px) {
+    .nav {
+        width: 90%;
+        justify-content: space-between;
+    }
+
+    .nav__left {
+        display: none; /* Se oculta el bloque izquierdo (links) en móvil */
+    }
+
+    .nav__button {
+        display: none; /* Se oculta el botón de contacto en móvil */
+    }
+
+    .nav__logo {
+        flex: unset; /*Se quita el flex:1 para que el logo no se estire y quede a la izquierda */
+        text-align: left;
+    }
+
+    .nav__right {
+        flex: unset; /* Se quita el flex:1 para que el bloque derecho no se estire y quede a la derecha */
+        display: flex;
+        justify-content: flex-end; /* Alinea el bloque derecho a la derecha */
+    }
+
+    .nav__logo-img {
+        height: 40px; /* Se reduce el tamaño del logo para que no ocupe tanto espacio en móvil */
+    }
+
+    .nav__hamburger {
+        display: flex; /*  Se muestra el icono de hamburguesa en móvil */
+    }
+}
+
+@media (max-width:1024px) {
+    .hero {
+        padding: 0 8%; /* Espacio lateral para que el contenido no quede pegado a los bordes en pantallas medianas */
+    }
+
+    .hero__title {
+        font-size: 12vw; /* Tamaño de fuente grande y fluida para el título principal */
+        letter-spacing: -3px; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte */
+    }
+
+    .hero__subtitle {
+        font-size: 1.2rem; /* Tamaño de fuente para el subtítulo */
+    }
+
+    .portfolio__grid {
+        gap: 20px; /* Espacio entre las tarjetas del portfolio */
+        grid-template-columns: 1fr 1fr; /* Dos columnas para las tarjetas del portfolio en pantallas medianas */
+    }
+
+    .contact__word {
+        font-size: 5rem; /* Tamaño de fuente grande para la palabra "Hablemos" en pantallas medianas */
+    }
+
+    .contact__link {
+        font-size: 3rem; /* Tamaño de fuente grande para los enlaces de contacto en pantallas medianas */
+    }
+
+    .about {
+        padding-top: 120px; /* Para que no lo pise el nav fixed en pantallas medianas */
+    }
+
+    .about__title {
+        letter-spacing: -2px; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte en pantallas medianas */
+    }
+
+    .about__tagline {
+        font-size: 1.2rem; /* Tamaño de fuente para el subtítulo en pantallas medianas */
+    }
+
+    .skills {
+        padding: 80px 8%; /* Espacio dentro del área de capacidades en pantallas medianas */
+    }
+
+    .skills__row {
+        font-size: 1.3rem; /* Tamaño de fuente para las filas de capacidades en pantallas medianas */
+    }
+
+    .hablemos {
+        padding-top: 140px; /* Para que no lo pise el nav fixed en pantallas medianas */
+    }
+
+    .contact__grid {
+        gap: 60px; /* Espacio entre las columnas del contacto en pantallas medianas */
+    }
+
+    .contact__title {
+        letter-spacing: -2px; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte en pantallas medianas */
+    }
+
+    .project-single {
+        padding: 8.125rem 0 0 0; /* Para que no lo pise el nav fixed en pantallas medianas */
+    }
+
+    .project-title {
+        font-size: 10vw; /* Tamaño de fuente grande y fluida para el título del proyecto en pantallas medianas */
+        line-height: 0.9;  
+        letter-spacing: -2px; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte en pantallas medianas */
+    }
+
+    .project-category {
+        font-size: 1rem; /* Tamaño de fuente para la categoría del proyecto en pantallas medianas */
+    }
+
+    .project-info-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas para la ficha técnica del proyecto en pantallas medianas */
+        gap: 30px; /* Espacio entre los elementos de la ficha técnica en pantallas medianas */
+    }
+
+    .info-text {
+        grid-column: 1 / -1; /* Hace que el bloque de texto de la ficha técnica ocupe las dos columnas en pantallas medianas */
+    }
+
+    .project-gallery {
+        max-width: 700px; /* Ancho máximo para la galería en pantallas medianas */
+        gap: 30px;  /* Espacio entre las imágenes de la galería en pantallas medianas */
+    }
+
+    .gallery-two-columns img {
+        height: 300px; /* Altura para las imágenes de la galería de dos columnas en pantallas medianas */
+    } 
+
+    .gallery-extra-grid {
+        grid-template-columns: 1fr 1fr; /* En pantallas medianas, la galería extra pasa a ser de 2 columnas para que las imágenes sean más grandes y se vean mejor */
+    }
+
+    .gallery-extra-grid img {
+        height: 220px; /* Altura para las imágenes de la galería extra en pantallas medianas */
+    }
+
+}
+
+/*RESPONSIVE 768px*/
+@media (max-width:768px) {
+    .hero {
+        height: auto; /* En móvil, el hero se ajusta a su contenido */
+        padding: 120px 8% 80px 8%; /* Espacio dentro del hero en móvil, con más espacio arriba para que no lo pise el nav fixed */
+        align-items: flex-start; /* Alinea el contenido del hero al inicio (arriba) en móvil */
+    }
+
+    .hero__title {
+        font-size: 14vw; /* Tamaño de fuente grande y fluida para el título principal en móvil */
+        line-height: 0.9; 
+        letter-spacing: -2px; /* Letter-spacing negativo para que las letras se superpongan ligeramente y crear un efecto de impacto visual fuerte en móvil */
+    }
+
+    .hero__subtitle {
+        font-size: 1rem; /* Tamaño de fuente para el subtítulo en móvil */
+        margin-top: 1.2rem; /* Espacio entre el título y el subtítulo en móvil */ 
+    }
+
+    .hero__doodle {
+        display: none; /* Ocultamos el garabato en móvil para que no sobrecargue la pantalla pequeña */
+    }
+
+    .services {
+        padding: 60px 8%; /* Espacio dentro del área de servicios en móvil */
+    }
+
+    .services__header {
+        padding: 25px 0; /* Espacio dentro del encabezado de servicios en móvil */
+    }
+
+    .services__title {
+        font-size: 1.5rem; /* Tamaño de fuente para el título de servicios en móvil */
+    }
+
+    .services__arrow {
+        font-size: 1.2rem; /* Tamaño de fuente para la flecha decorativa en móvil */
+    }
+
+    .services__text {
+        font-size: 0.9rem; /* Tamaño de fuente para el texto de servicios en móvil */
+    }
+
+    .portfolio {
+        margin: 2.5rem auto; /* Margen para separar el portfolio del resto del contenido en móvil */
+    }
+
+    .portfolio__title {
+        margin: 0 0 2.5rem 0; /* Margen para separar el título del portfolio del resto del contenido en móvil */
+    }
+
+    .portfolio__grid {
+        grid-template-columns: 1fr; /* En móvil, las tarjetas del portfolio pasan a ser de una en una para que se vean mejor */
+    }
+
+    .project-card__image {
+        height: 200px; /* Altura para las imágenes de las tarjetas del portfolio en móvil */
+    }
+
+    .contact {
+        padding: 60px 8%; /* Espacio dentro del área de contacto en móvil, con más espacio arriba para que no lo pise el nav fixed */
+    }
+
+    .contact__word {
+        font-size: 3.5rem; /* Tamaño de fuente grande para la palabra "Hablemos" en móvil, pero más pequeño que en pantallas medianas para que no ocupe tanto espacio */
+    }
+
+    .contact__pretext {
+        font-size: 1rem; /* Tamaño de fuente para el texto previo a los detalles de contacto en móvil */
+    }
+
+    .contact__decoration {
+        font-size: 3rem; /* Tamaño de fuente para la decoración de contacto en móvil, pero más pequeño que en pantallas medianas para que no ocupe tanto espacio */
+    }
+
+    .footer {
+        padding: 60px 8% 30px 8%; /* Espacio dentro del footer en móvil, con más espacio arriba para que no lo pise el nav fixed y menos espacio abajo para que no quede tan vacío */
+    }
+
+    .footer__nav {
+        flex-direction: column; 
+        gap: 15px;
+        text-align: center; /* Centra el texto de los enlaces del footer en móvil */
+    }
+
+    .footer__social {
+        flex-direction: column;  
+        gap: 12px; 
+    }
+
+    .about__hero {
+        margin-bottom: 60px; /* Margen para separar el hero del about del resto del contenido en móvil */
+    }
+
+    .about__title {
+        font-size: 14vw; 
+        line-height: 0.9; 
+    }
+
+    .about__tagline {
+        font-size: 1rem; 
+    }
+
+    .about__values {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .about__value {
+        font-size: 0.8rem;
+    }
+
+    .skills {
+        padding: 60px 8%; 
+        margin-top: 60px;
+    }
+
+    .skills__row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 1.1rem;
+    }
+
+    .contact__grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .contact__description {
+        font-size: 1rem;
+        margin-bottom: 35px;
+    }
+
+    .contact__link {
+        font-size: 1.2rem;
+    }
+
+    .contact__social {
+        justify-content: flex-start;
+        gap: 20px;
+    }
+
+    .contact__title {
+        font-size: 12vw;
+        line-height: 1;
+    }
+
+    .contact__form-wrapper {
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .contact__button {
+        padding: 16px;
+    }
+
+    .project-hero {
+        margin: 0 0 50px 0;
+    }
+
+    .project-title {
+        font-size: 12vw;
+        line-height: 1;
+    }
+
+    .project-info-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .gallery-two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-two-columns img {
+        height: auto;
+    }
+
+    .gallery-five-columns {
+        grid-template-columns: repeat(2, 1fr); /* En móvil pasan a ser de 2 en 2 */
+    }
+
+    .gallery-five-columns img {
+        height: 250px; /* Se reduce la altura para que se vean bien en móvil */
+    }
+
+    
+    .gallery-two-columns,
+    .gallery-three-columns {
+        grid-template-columns: 1fr; /* En móvil, una columna */
+    }
+
+    .gallery-two-columns img {
+        height: auto; /* Se quita la altura fija en móvil */
+    }
+
+    .gallery-extra-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en tablet/móvil */
+        gap: 15px;
+    }
+
+    .gallery-extra-grid img {
+        height: 200px; /* Se reduce la altura en pantallas pequeñas */ 
+    }
+
+    .project-info-grid {
+        grid-template-columns: 1fr; 
+        padding: 40px 8%;
+        gap: 25px;
+    }
+
+    .info-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 10px;
+    }
+
+    .btn-play-video {
+        font-size: 0.8rem;
+        padding: 10px 18px;
+    }
+
+    .project-gallery {
+        margin-bottom: 60px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+}
+
+@media (max-width:480px) {
+    .hero__title {
+        font-size: 16vw;
+    }
+
+    .project-card {
+        padding: 18px;
+    }
+
+    .project-card__title {
+        font-size: 1rem;
+    }
+
+    .contact__word {
+        font-size: 2.5rem;
+    }
+
+    .about__title {
+        font-size: 16vw;
+    }
+
+    .about__tagline {
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+
+    .skills__row {
+        font-size: 1rem;
+    }
+
+    .projects__title {
+        font-size: 8vw;
+    }
+
+    .about__subtitle {
+        font-size: 2rem;
+    }
+
+    .about__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about__content {
+        padding: 0 8%;
+    }
+
+    .contact__title {
+        font-size: 14vw;
+    }
+
+    .hablemos {
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
+    .contact__label {
+        font-size: 0.7rem;
+    }
+
+    .contact__input,
+    .contact__textarea {
+        font-size: 0.95rem;
+    }
+
+    .contact__social-link {
+        font-size: 0.9rem;
+    }
+
+    .gallery-two-columns img {
+        height: 250px;
+    }
+
+    .project-title {
+        font-size: 16vw;
+    }
+
+}
+

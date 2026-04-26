@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>lotti</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/main.css'>
+    <script src='js/main.js' defer></script>
+</head>
+
+
+
+<!-- BODY -->
+
+<body>
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <header class="header">
+        <nav class="nav">
+
+            <!-- MENÚ IZQUIERDO -->
+            <div class="nav__left">
+                <a href="proyectos.html" title="Ir a la página de Proyectos" class="nav__link">Proyectos</a>
+                <a href="about.html" title="Ir a la página Sobre mí" class="nav__link">Sobre mí</a>
+            </div>
+
+            <!-- LOGO CENTRADO -->
+            <div class="nav__logo">
+                <a href="index.html" title="Ir a la página de Inicio">
+                    <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+                </a>
+            </div>
+
+            <!-- MENÚ DERECHO -->
+            <div class="nav__right">
+                <a href="contacto.html" title="Ir a la página de Contacto"
+                    class="nav__button nav__button--contacto">Contacto</a>
+                <button class="nav__hamburger" title="Abrir menú" onclick="toggleMenu()">
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                    <span class="nav__hamburger-line"></span>
+                </button>
+            </div>
+
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="proyectos.html" title="Ir a la página de Proyectos">Proyectos</a>
+            <a href="about.html" title="Ir a la página Sobre mí">Sobre mí</a>
+            <a href="contacto.html" title="Ir a la página de Contacto">Contacto</a>
+
+        </div>
+    </header>
+
+    <main class="project-single">
+        <section class="project-hero">
+            <h1 class="project-title">EL NIDO</h1>
+            <p class="project-category">Branding</p>
+        </section>
+
+        <section class="project-info-grid">
+            <div class="info-item">
+                <h2>Sector</h2>
+                <p>Hostelería</p>
+            </div>
+            <div class="info-item">
+                <h2>Año</h2>
+                <p>2026</p>
+            </div>
+            <div class="info-item">
+                <h2>Servicios</h2>
+                <p>Branding, Identidad Visual</p>
+            </div>
+            <div class="info-text">
+                <p>Diseño de identidad visual para El Nido, una cafetería ficticia concebida como un espacio tranquilo
+                    orientado al descanso y la desconexión. El encargo planteaba desarrollar una imagen coherente con un
+                    ambiente acogedor y contemporáneo.
+                    <br>
+                    La propuesta se articula mediante un lenguaje visual minimalista basado en negro, blanco y madera,
+                    reforzando la sensación de calma y sencillez. El resultado es una identidad sobria y equilibrada que
+                    transmite cercanía y posiciona el espacio como un lugar pensado para relajarse
+                </p>
+            </div>
+        </section>
+
+        <div class="project-gallery">
+
+            <!-- 1 imagen grande -->
+            <div class="gallery-hero">
+                <picture>
+                    <source srcset="images/EN0.webp.webp" type="image/webp">
+                    <source srcset="images/EN0.jpg" type="image/jpeg">
+                    <img src="images/EN0.jpg" alt="Imagen Principal" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- fila 2 imágenes -->
+            <div class="gallery-two-columns">
+                <picture>
+                    <source srcset="images/EN1.webp.webp" type="image/webp">
+                    <source srcset="images/EN1.jpg" type="image/jpeg">
+                    <img src="images/EN1.jpg" alt="Imagen 2" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="images/EN4.webp.webp" type="image/webp">
+                    <source srcset="images/EN4.jpg" type="image/jpeg">
+                    <img src="images/EN4.jpg" alt="Imagen 3" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- fila 3 imágenes -->
+            <div class="gallery-three-columns">
+                <picture>
+                    <source srcset="images/EN3.webp.webp" type="image/webp">
+                    <source srcset="images/EN3.jpg" type="image/jpeg">
+                    <img src="images/EN3.jpg" alt="Imagen 4" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="images/EN2.webp.webp" type="image/webp">
+                    <source srcset="images/EN2.jpg" type="image/jpeg">
+                    <img src="images/EN2.jpg" alt="Imagen 5" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="images/EN5.webp.webp" type="image/webp">
+                    <source srcset="images/EN5.jpg" type="image/jpeg">
+                    <img src="images/EN5.jpg" alt="Imagen 6" loading="lazy">
+                </picture>
+            </div>
+
+            <!-- NUEVA FILA EDITORIAL (2 horizontales) -->
+            <div class="gallery-editorial">
+                <picture>
+                    <source srcset="images/EN6.webp.webp" type="image/webp">
+                    <source srcset="images/EN6.jpg" type="image/jpeg">
+                    <img src="images/EN6.jpg" alt="Imagen 7" loading="lazy">
+                </picture>
+                <picture>
+                    <source srcset="images/EN7.webp.webp" type="image/webp">
+                    <source srcset="images/EN7.jpg" type="image/jpeg">
+                    <img src="images/EN7.jpg" alt="Imagen 8" loading="lazy">
+                </picture>
+            </div>
+
+        </div>
+        
+        <nav class="project-pagination">
+            <a href="Purebeat.html" title="Ver proyecto anterior" class="prev-project">← Anterior</a>
+            <a href="proyectos.html" title="Ver todos los proyectos" class="back-grid">Ver todos</a>
+        </nav>
+    </main>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="nav__logo">
+                <a href="index.html" title="Ir a la página de Inicio">
+                    <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+                </a>
+            </div>
+
+            <nav class="footer__nav">
+                <a href="index.html" title="Ir a la página de Inicio" class="footer__link">Inicio</a>
+                <a href="proyectos.html" title="Ir a la página de Proyectos" class="footer__link">Proyectos</a>
+                <a href="about.html" title="Ir a la página Sobre mí" class="footer__link">Sobre mí</a>
+                <a href="contacto.html" title="Ir a la página de Contacto" class="footer__link">Contacto</a>
+            </nav>
+
+            <div class="footer__social">
+                <a href="https://wa.me/620171067?text=Hola%20quiero%20información" title="Abrir WhatsApp"
+                    target="_blank" rel="noreferrer" class="footer__social-link" aria-label="WhatsApp">
+                    <span class="social-icon">WhatsApp</span> </a>
+                <a href="https://www.linkedin.com/in/carlota-ruiz-nu%C3%B1ez-675740191/" title="Abrir LinkedIn"
+                    target="_blank" rel="noreferrer" class="footer__social-link" aria-label="LinkedIn">
+                    <span class="social-icon">LinkedIn</span>
+                </a>
+            </div>
+
+            <div class="footer__copy">
+                <p>&copy; 2026 Lotti — Diseñadora Gráfica.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

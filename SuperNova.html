@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>lotti</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' href='css/main.css'>
+  <script src='js/main.js' defer></script>
+</head>
+
+
+
+<!-- BODY -->
+
+<body>
+  <!-- MENÚ DE NAVEGACIÓN -->
+  <header class="header">
+    <nav class="nav">
+
+      <!-- MENÚ IZQUIERDO -->
+      <div class="nav__left">
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="nav__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="nav__link">Sobre mí</a>
+      </div>
+
+      <!-- LOGO CENTRADO -->
+      <div class="nav__logo">
+        <a href="index.html" title="Ir a la página de Inicio">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <!-- MENÚ DERECHO -->
+      <div class="nav__right">
+        <a href="contacto.html" title="Ir a la página de Contacto" class="nav__button nav__button--contacto">Contacto</a>
+        <button class="nav__hamburger" onclick="toggleMenu()">
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+          <span class="nav__hamburger-line"></span>
+        </button>
+      </div>
+
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+
+      <a href="proyectos.html" title="Ir a la página de Proyectos">Proyectos</a>
+      <a href="about.html" title="Ir a la página Sobre mí">Sobre mí</a>
+      <a href="contacto.html" title="Ir a la página de Contacto">Contacto</a>
+
+    </div>
+  </header>
+
+  <main class="project-single">
+    <section class="project-hero">
+      <h1 class="project-title">SUPER NOVA</h1>
+      <p class="project-category">Diseño editorial, UI/UX & Desarrollo Web</p>
+    </section>
+
+    <section class="project-info-grid">
+      <div class="info-item">
+        <h2>Sector</h2>
+        <p>Editorial científico</p>
+      </div>
+      <div class="info-item">
+        <h2>Año</h2>
+        <p>2026</p>
+      </div>
+      <div class="info-item">
+        <h2>Servicios</h2>
+        <p>Diseño Web, UI/UX, Diseño editorial</p>
+      </div>
+      <div class="info-text">
+        <p>Diseño editorial y web para la marca ficticia Supernova, una revista de divulgación científica orientada a un
+          público contemporáneo. El encargo planteaba desarrollar una identidad visual clara y actual capaz de acercar
+          el contenido científico desde un lenguaje accesible y atractivo.
+          <br>
+          La propuesta se construye a partir de un diseño limpio y moderno basado en el contraste entre amarillo neón,
+          negro y blanco, generando una imagen visual potente y reconocible. El resultado es un sistema editorial
+          coherente que refuerza la legibilidad y posiciona la publicación dentro de un contexto visual actual y
+          tecnológico.
+        </p>
+      </div>
+    </section>
+
+    <div class="project-gallery">
+
+      <div class="gallery-three-columns">
+        <picture>
+          <source srcset="images/SN0.webp.webp" type="image/webp">
+          <img src="images/SN0.jpg" alt="Detalle 1" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/SN1.webp.webp" type="image/webp">
+          <img src="images/SN1.jpg" alt="Detalle 2" loading="lazy">
+        </picture>
+        <picture>
+          <source srcset="images/SN2.webp.webp" type="image/webp">
+          <img src="images/SN2.jpg" alt="Detalle 3" loading="lazy">
+        </picture>
+      </div>
+
+      <div class="web-scroll-container">
+        <div class="browser-header">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <div class="url-bar">www.lotti-design.com</div>
+        </div>
+        <div class="browser-content">
+          <picture>
+            <source srcset="images/SN3.webp.webp" type="image/webp">
+            <img src="images/SN3.jpg" alt="Full Web Capture" class="long-image" loading="lazy">
+          </picture>
+        </div>
+        <div class="scroll-hint">Haz scroll para ver la web completa ↓</div>
+      </div>
+
+    </div>
+
+    <nav class="project-pagination">
+      <a href="Purebeat.html" title="Ir al proyecto anterior" class="prev-project">← Anterior</a>
+      <a href="proyectos.html" title="Ir a la página de Proyectos" class="back-grid">Ver todos</a>
+      <a href="ELNIDO.html" title="Ir al proyecto siguiente" class="next-project">Siguiente →</a>
+    </nav>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="nav__logo">
+        <a href="index.html" title="Ir a la página de Inicio">
+          <img src="images/logonegro.svg" alt="logo" class="nav__logo-img">
+        </a>
+      </div>
+
+      <nav class="footer__nav">
+        <a href="index.html" title="Ir a la página de Inicio" class="footer__link">Inicio</a>
+        <a href="proyectos.html" title="Ir a la página de Proyectos" class="footer__link">Proyectos</a>
+        <a href="about.html" title="Ir a la página Sobre mí" class="footer__link">Sobre mí</a>
+        <a href="contacto.html" title="Ir a la página de Contacto" class="footer__link">Contacto</a>
+      </nav>
+
+      <div class="footer__social">
+        <a href="https://wa.me/620171067?text=Hola%20quiero%20información" title="Abrir WhatsApp" target="_blank" rel="noreferrer" class="footer__social-link" aria-label="WhatsApp">
+          <span class="social-icon">WhatsApp</span> </a>
+        <a href="https://www.linkedin.com/in/carlota-ruiz-nu%C3%B1ez-675740191/" title="Abrir LinkedIn" target="_blank" rel="noreferrer" class="footer__social-link" aria-label="LinkedIn">
+          <span class="social-icon">LinkedIn</span>
+        </a>
+      </div>
+
+      <div class="footer__copy">
+        <p>&copy; 2026 Lotti — Diseñadora Gráfica.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

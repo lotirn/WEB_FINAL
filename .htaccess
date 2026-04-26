@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Redirigir index.html a /inicio
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ /inicio [R=301,L]
+
+# inicio → index.html
+RewriteRule ^inicio$ index.html [L]
